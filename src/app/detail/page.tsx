@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./../page.module.css";
 import { stackRouterBack, stackRouterPush } from "@/utils/stackReouter";
 import { useRouter } from "next/navigation";
 
@@ -9,9 +8,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <button onClick={() => stackRouterPush(router, "/detail")}>
-        {"push 이동"}
-      </button>
+      <button onClick={() => stackRouterBack(router)}>뒤로 가기</button>
     </main>
   );
 }
