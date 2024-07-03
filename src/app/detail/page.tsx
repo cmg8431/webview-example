@@ -1,14 +1,11 @@
 "use client";
 import styles from "./../page.module.css";
-import { stackRouterBack, stackRouterPush } from "@/utils/stackReouter";
-import { useRouter } from "next/navigation";
+import { stackRouterBack } from "@/utils/stackReouter";
 
 export default function Home() {
-  const router = useRouter();
-
   return (
     <main className={styles.main}>
-      <button onClick={() => stackRouterBack(router)}>뒤로 가기</button>
+      <button onClick={() => stackRouterBack()}>뒤로 가기</button>
     </main>
   );
 }

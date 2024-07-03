@@ -1,5 +1,5 @@
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { NextRouter } from "next/router";
+import Router from "next/router";
 
 const isApp = () => {
   let isApp = false;
@@ -19,19 +19,19 @@ const sendRouterEvent = (path: string): void => {
 };
 
 // 뒤로가기 하는 경우
-export const stackRouterBack = (router: AppRouterInstance) => {
+export const stackRouterBack = () => {
   if (isApp()) {
     sendRouterEvent("back");
   } else {
-    router.back();
+    Router.back();
   }
 };
 
 // push 하는 경우
-export const stackRouterPush = (router: AppRouterInstance, url: string) => {
+export const stackRouterPush = (url: string) => {
   if (isApp()) {
     sendRouterEvent(url);
   } else {
-    router.push(url);
+    Router.push(url);
   }
 };
